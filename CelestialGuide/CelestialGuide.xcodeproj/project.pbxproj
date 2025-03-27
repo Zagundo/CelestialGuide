@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		74B6E7F32D9515FF004A4111 /* SwiftAA in Frameworks */ = {isa = PBXBuildFile; productRef = 74B6E7F22D9515FF004A4111 /* SwiftAA */; };
+		74B6E7F42D951A32004A4111 /* SwiftAA in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 74B6E7F22D9515FF004A4111 /* SwiftAA */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		74B6E7B92D94EAE4004A4111 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -22,6 +27,20 @@
 			remoteInfo = CelestialGuide;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		74B6E7F52D951A32004A4111 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				74B6E7F42D951A32004A4111 /* SwiftAA in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		74B6E7A82D94EAE4004A4111 /* CelestialGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CelestialGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B6E7F32D9515FF004A4111 /* SwiftAA in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +122,7 @@
 				74B6E7A42D94EAE4004A4111 /* Sources */,
 				74B6E7A52D94EAE4004A4111 /* Frameworks */,
 				74B6E7A62D94EAE4004A4111 /* Resources */,
+				74B6E7F52D951A32004A4111 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -112,6 +133,7 @@
 			);
 			name = CelestialGuide;
 			packageProductDependencies = (
+				74B6E7F22D9515FF004A4111 /* SwiftAA */,
 			);
 			productName = CelestialGuide;
 			productReference = 74B6E7A82D94EAE4004A4111 /* CelestialGuide.app */;
@@ -195,6 +217,9 @@
 			);
 			mainGroup = 74B6E79F2D94EAE4004A4111;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				74B6E7F12D9515FF004A4111 /* XCRemoteSwiftPackageReference "SwiftAA" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 74B6E7A92D94EAE4004A4111 /* Products */;
 			projectDirPath = "";
@@ -558,6 +583,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74B6E7F12D9515FF004A4111 /* XCRemoteSwiftPackageReference "SwiftAA" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onekiloparsec/SwiftAA.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74B6E7F22D9515FF004A4111 /* SwiftAA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74B6E7F12D9515FF004A4111 /* XCRemoteSwiftPackageReference "SwiftAA" */;
+			productName = SwiftAA;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74B6E7A02D94EAE4004A4111 /* Project object */;
 }
