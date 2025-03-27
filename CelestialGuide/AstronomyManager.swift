@@ -6,12 +6,10 @@ class AstronomyManager {
     func fetchSunData(for date: Date = Date()) -> CelestialBody {
         let julianDay = JulianDay(date)
         let sun = Sun(julianDay: julianDay)
-        let moon = Moon(julianDay: julianDay)  // Create Moon to get its distance
+        let moon = Moon(julianDay: julianDay)
         
-        let sunDistanceFromEarth = sun.radiusVector.value    // Sun's distance from Earth in astronomical units
-        let moonDistanceFromEarth = moon.radiusVector.value    // Moon's distance from Earth in asatronomical units
-        
-        // Approximate Sun's distance from Moon as the absolute difference:
+        let sunDistanceFromEarth = sun.radiusVector.value    // Using radiusVector for distance
+        let moonDistanceFromEarth = moon.radiusVector.value
         let sunDistanceFromMoon = abs(sunDistanceFromEarth - moonDistanceFromEarth)
         
         return CelestialBody(
@@ -20,6 +18,8 @@ class AstronomyManager {
             distanceFromSun: nil,  // Not applicable for the Sun
             distanceFromMoon: sunDistanceFromMoon,
             phase: nil,
+            phaseDescription: nil,
+            currentPhase: nil,
             riseTime: nil,
             setTime: nil,
             azimuth: nil
@@ -29,20 +29,35 @@ class AstronomyManager {
     func fetchMoonData(for date: Date = Date()) -> CelestialBody {
         let julianDay = JulianDay(date)
         let moon = Moon(julianDay: julianDay)
-        let sun = Sun(julianDay: julianDay)  // Create Sun to get its distance
+        let sun = Sun(julianDay: julianDay)
         
-        let moonDistanceFromEarth = moon.radiusVector.value    // Moon's distance from Earth
+        let moonDistanceFromEarth = moon.radiusVector.value
         let moonDistanceFromSun = abs(sun.radiusVector.value - moonDistanceFromEarth)
         
-        // Placeholder for phase (replace with proper calculation later)
-        let phasePlaceholder = 0.5
+        // 1. Get next full moon's Julian Day and format it:
+        let nextFullMoonJulian = moon.time(of: .fullMoon)
+        let fullMoonDate = nextFullMoonJulian.date
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        let nextFullMoonDescription = formatter.string(from: fullMoonDate)
+        
+        // 2. Compute the current phase of the Moon:
+        // Get the previous and next new moons to compute the phase fraction.
+        let previousNewMoon = moon.time(of: .newMoon, forward: false)
+        let nextNewMoon = moon.time(of: .newMoon, forward: true)
+        let synodicMonth = nextNewMoon.value - previousNewMoon.value
+        let currentFraction = (julianDay.value - previousNewMoon.value) / synodicMonth
+        let currentPhaseDescription = moonPhaseDescription(from: currentFraction)
         
         return CelestialBody(
             name: "Moon",
             distanceFromEarth: moonDistanceFromEarth,
             distanceFromSun: moonDistanceFromSun,
             distanceFromMoon: nil,  // Not applicable for the Moon
-            phase: phasePlaceholder,
+            phase: nil,
+            phaseDescription: "Next full moon: \(nextFullMoonDescription)",
+            currentPhase: "Current phase: \(currentPhaseDescription)",
             riseTime: nil,
             setTime: nil,
             azimuth: nil
@@ -59,12 +74,37 @@ class AstronomyManager {
         
         return CelestialBody(
             name: "Earth",
+            distanceFromEarth: 0.0,  // Earth's distance from itself is zero
             distanceFromSun: earthDistanceFromSun,
             distanceFromMoon: earthDistanceFromMoon,
             phase: nil,
+            phaseDescription: nil,
+            currentPhase: nil,
             riseTime: nil,
             setTime: nil,
             azimuth: nil
         )
+    }
+    
+    // Helper function to convert a phase fraction into a descriptive string.
+    private func moonPhaseDescription(from fraction: Double) -> String {
+        switch fraction {
+        case 0..<0.03, 0.97...1:
+            return "New Moon"
+        case 0.03..<0.22:
+            return "Waxing Crescent"
+        case 0.22..<0.28:
+            return "First Quarter"
+        case 0.28..<0.47:
+            return "Waxing Gibbous"
+        case 0.47..<0.53:
+            return "Full Moon"
+        case 0.53..<0.72:
+            return "Waning Gibbous"
+        case 0.72..<0.78:
+            return "Last Quarter"
+        default:
+            return "Waning Crescent"
+        }
     }
 }

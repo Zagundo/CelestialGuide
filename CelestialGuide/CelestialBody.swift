@@ -3,10 +3,12 @@ import Foundation
 
 struct CelestialBody {
     let name: String
-    var distanceFromEarth: Double?      // e.g. for Sun or Moon, the distance from Earth in kilometers
-    var distanceFromSun: Double?        // e.g. for Earth or Moon, the distance from the Sun in kilometers
-    var distanceFromMoon: Double?       // e.g. for Sun or Earth, the distance from the Moon in kilometers
-    var phase: Double?                  // for the Moon (percentage of illumination, for example)
+    var distanceFromEarth: Double?      // in kilometers
+    var distanceFromSun: Double?        // in kilometers
+    var distanceFromMoon: Double?       // in kilometers
+    var phase: Double?                  // if you later want to store a phase percentage
+    var phaseDescription: String?       // for example, the next full moon date
+    var currentPhase: String?           // for current moon phase (e.g., Waxing Crescent)
     var riseTime: Date?
     var setTime: Date?
     var azimuth: Double?
