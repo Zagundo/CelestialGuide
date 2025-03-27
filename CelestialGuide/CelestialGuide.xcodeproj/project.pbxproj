@@ -10,6 +10,7 @@
 		74B6E7F32D9515FF004A4111 /* SwiftAA in Frameworks */ = {isa = PBXBuildFile; productRef = 74B6E7F22D9515FF004A4111 /* SwiftAA */; };
 		74B6E7F42D951A32004A4111 /* SwiftAA in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 74B6E7F22D9515FF004A4111 /* SwiftAA */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		74B6E7F72D951C81004A4111 /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6E7F62D951C77004A4111 /* CelestialBody.swift */; };
+		74B6E7FB2D953C2A004A4111 /* AstronomyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6E7FA2D953C2A004A4111 /* AstronomyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		74B6E7B82D94EAE4004A4111 /* CelestialGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CelestialGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B6E7C22D94EAE4004A4111 /* CelestialGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CelestialGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B6E7F62D951C77004A4111 /* CelestialBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialBody.swift; sourceTree = "<group>"; };
+		74B6E7FA2D953C2A004A4111 /* AstronomyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -97,6 +99,7 @@
 		74B6E79F2D94EAE4004A4111 = {
 			isa = PBXGroup;
 			children = (
+				74B6E7FA2D953C2A004A4111 /* AstronomyManager.swift */,
 				74B6E7F62D951C77004A4111 /* CelestialBody.swift */,
 				74B6E7AA2D94EAE4004A4111 /* CelestialGuide */,
 				74B6E7BB2D94EAE4004A4111 /* CelestialGuideTests */,
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B6E7F72D951C81004A4111 /* CelestialBody.swift in Sources */,
+				74B6E7FB2D953C2A004A4111 /* AstronomyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

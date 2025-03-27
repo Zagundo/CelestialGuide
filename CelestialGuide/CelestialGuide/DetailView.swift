@@ -15,7 +15,9 @@ struct DetailView: View {
             if let distanceFromSun = celestialBody.distanceFromSun {
                 Text("Distance from Sun: \(distanceFromSun)")
             }
-            // Additional details can be added here
+            if let distanceFromMoon = celestialBody.distanceFromMoon {
+                Text("Distance from Moon: \(distanceFromMoon)")
+            }
         }
         .padding()
     }
@@ -25,10 +27,11 @@ struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         // Provide a sample CelestialBody to preview DetailView
         DetailView(celestialBody: CelestialBody(
-            name: "Test Body",
-            distanceFromEarth: 100.0,
-            distanceFromSun: 150.0,
-            phase: 0.5,
+            name: "Preview Body",
+            distanceFromEarth: 150000000,
+            distanceFromSun: nil,
+            distanceFromMoon: 384400,
+            phase: nil,
             riseTime: nil,
             setTime: nil,
             azimuth: nil
