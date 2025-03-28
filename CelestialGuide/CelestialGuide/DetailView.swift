@@ -10,13 +10,13 @@ struct DetailView: View {
                 .bold()
             
             if let distanceFromEarth = celestialBody.distanceFromEarth {
-                Text("Distance from Earth: \(distanceFromEarth) km")
+                Text("Distance from Earth: \(distanceFromEarth) AU")
             }
             if let distanceFromSun = celestialBody.distanceFromSun {
-                Text("Distance from Sun: \(distanceFromSun) km")
+                Text("Distance from Sun: \(distanceFromSun) AU")
             }
             if let distanceFromMoon = celestialBody.distanceFromMoon {
-                Text("Distance from Moon: \(distanceFromMoon) km")
+                Text("Distance from Moon: \(distanceFromMoon) AU")
             }
             if let phaseDesc = celestialBody.phaseDescription {
                 Text(phaseDesc)

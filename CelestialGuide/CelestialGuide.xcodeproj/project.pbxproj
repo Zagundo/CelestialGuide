@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		746D458C2D9631B0004CA24F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746D458B2D9631B0004CA24F /* LocationManager.swift */; };
 		74B6E7F32D9515FF004A4111 /* SwiftAA in Frameworks */ = {isa = PBXBuildFile; productRef = 74B6E7F22D9515FF004A4111 /* SwiftAA */; };
 		74B6E7F42D951A32004A4111 /* SwiftAA in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 74B6E7F22D9515FF004A4111 /* SwiftAA */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		74B6E7F72D951C81004A4111 /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6E7F62D951C77004A4111 /* CelestialBody.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		746D458B2D9631B0004CA24F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		74B6E7A82D94EAE4004A4111 /* CelestialGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CelestialGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B6E7B82D94EAE4004A4111 /* CelestialGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CelestialGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B6E7C22D94EAE4004A4111 /* CelestialGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CelestialGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,9 +54,22 @@
 		74B6E7FA2D953C2A004A4111 /* AstronomyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		746D458E2D9636F9004CA24F /* Exceptions for "CelestialGuide" folder in "CelestialGuide" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 74B6E7A72D94EAE4004A4111 /* CelestialGuide */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		74B6E7AA2D94EAE4004A4111 /* CelestialGuide */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				746D458E2D9636F9004CA24F /* Exceptions for "CelestialGuide" folder in "CelestialGuide" target */,
+			);
 			path = CelestialGuide;
 			sourceTree = "<group>";
 		};
@@ -99,6 +114,7 @@
 		74B6E79F2D94EAE4004A4111 = {
 			isa = PBXGroup;
 			children = (
+				746D458B2D9631B0004CA24F /* LocationManager.swift */,
 				74B6E7FA2D953C2A004A4111 /* AstronomyManager.swift */,
 				74B6E7F62D951C77004A4111 /* CelestialBody.swift */,
 				74B6E7AA2D94EAE4004A4111 /* CelestialGuide */,
@@ -269,6 +285,7 @@
 			files = (
 				74B6E7F72D951C81004A4111 /* CelestialBody.swift in Sources */,
 				74B6E7FB2D953C2A004A4111 /* AstronomyManager.swift in Sources */,
+				746D458C2D9631B0004CA24F /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +449,9 @@
 				DEVELOPMENT_TEAM = JXN8KZ474N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CelestialGuide/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CelestialGuide needs your location to calculate accurate sunrise, sunset, and horizon data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +481,9 @@
 				DEVELOPMENT_TEAM = JXN8KZ474N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CelestialGuide/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CelestialGuide needs your location to calculate accurate sunrise, sunset, and horizon data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
